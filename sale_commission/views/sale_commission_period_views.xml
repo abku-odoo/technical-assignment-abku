@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_commission_period" model="ir.actions.act_window">
+        <field name="name">Commission Period</field>
+        <field name="res_model">sale.commission.period</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <record id="action_commission_period_view_tree" model="ir.ui.view">
+        <field name="name">action.commission.period.view.tree</field>
+        <field name="model">sale.commission.period</field>
+        <field name="arch" type="xml">
+            <tree editable='bottom'>
+                <field name="quarter" />
+                <field name="year" />
+                <field name="date_from" />
+                <field name="date_to" />
+                <field name="target_amount"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

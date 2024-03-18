@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_commission_plan_method,access_commission_plan_method,model_commission_plan_method,base.group_user,1,1,1,1
+access_commission_plan,access_commission_plan,model_commission_plan,base.group_user,1,1,1,1
+access_sale_commission_period,access_sale_commission_period,model_sale_commission_period,base.group_user,1,1,1,1
+access_sale_commission_plans_report,access_sale_commission_plans_report,model_sale_commission_plans_report,base.group_user,1,1,1,1

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    
+    <record id="commissions_plan_method_list_view" model="ir.ui.view">
+        <field name="name">commissions.plan.method.view.tree</field>
+        <field name="model">commission.plan.method</field>
+        <field name="arch" type="xml">
+            <tree string="Channel" editable='bottom' >
+                <!-- <field name="commission_plan_id" invisible="1"/> -->
+                <field name="min_achievement"/>
+                <field name="commission_rate" />
+            </tree>
+        </field>
+    </record>
+</odoo>

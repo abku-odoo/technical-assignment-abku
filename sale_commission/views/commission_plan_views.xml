@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_commission_plan_form" model="ir.ui.view">
+        <field name="name">commission.plan.form</field>
+        <field name="model">commission.plan</field>
+        <field name="arch" type="xml">
+            <form string="Commission Plan">
+                <header>
+                    <button name='state_approve' type='object' string='Approve' class='oe_highlight' invisible="state in ['approved','cancel']"/>
+                    <button name='state_cancel' type='object' string='Cancel'  invisible="state =='cancel'"/>
+                    <field name='state' widget='statusbar' />
+                </header>
+                <sheet>
+                    <div class='col-8'>
+                        <label for='commission_plan' string='Commisssion Plan' />
+                        <h1 class="mb-2">
+                            <field name="commission_plan" />
+                        </h1>
+                    </div>
+                    <group>
+                        <group col='2'>
+                            <label for='date_from' string='Date' />
+                            <div class="o_row">
+                                <field name='date_from' />
+                                <label for='date_to' string='->' />
+                                <field name='date_to' class='oe_inline' />
+                            </div>
+                            <field name="target" />
+                            <field name="product_ids" widget="many2many_tags" />
+                        </group>
+                        <group col='2'>
+                            <field name="company" />
+                            <field name="sales_team_id" />
+                            <field name="salesperson_id" invisible='not sales_team_id' />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Commissions">
+                            <field name="commissions_ids" />
+                        </page>
+                        <page string='Targets'>
+                            <field name='target_ids'/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_commission_plan_tree" model="ir.ui.view">
+        <field name="name">commission.plan.tree</field>
+        <field name="model">commission.plan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name='date_from' />
+                <field name='date_to'/>
+                <field name="target" />
+                <field name="product_ids" widget="many2many_tags" />
+                <field name="company" />
+                <field name="sales_team_id" />
+                <field name="salesperson_id" />
+            </tree>
+        </field>
+        </record>
+
+    <record id="action_commission_plan" model="ir.actions.act_window">
+        <field name="name">Commission Plans</field>
+        <field name="res_model">commission.plan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
